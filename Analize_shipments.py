@@ -197,9 +197,5 @@ print(full_data)
 
 full_data['delivery_duration'] = (full_data['delivered_date'] - full_data['shipped_date']).dt.days
 
-finished_shipments = full_data.dropna(subset=['delivery_duration'])
-
-shipper_report = finished_shipments.groupby('name')['delivery_duration'].mean()
-
-print("Середній термін доставки за перевізниками (в днях):")
-print(shipper_report)
+print("Інформація про тривалість доставки")
+print(full_data[['order_id', 'name', 'ship_country', 'delivery_duration']])
