@@ -3,16 +3,40 @@
 # робимо об’єднання таблиць для аналізу:
 # Поєднюємо та досліджуємо дані користуючись таблицями suppliers і products
 
+# <<<<<<< onalivka-tech-patch-1
 # df_inventory = df['inventory']
 # df_products = df['products']
 # df_warehouses = df['warehouses']
 # df_suppliers = df['suppliers']
-#
+
 # full_data = (df_inventory
 #           .merge(df_products, on='product_id')
 #           .merge(df_warehouses, on='warehouse_id'))
-#
+
 # print(full_data.columns)
+# =======
+# # df_inventory = df['inventory']
+# # df_products = df['products']
+# # df_warehouses = df['warehouses']
+# # df_suppliers = df['suppliers']
+# #
+# # full_data = (df_inventory
+# #           .merge(df_products, on='product_id')
+# #           .merge(df_warehouses, on='warehouse_id'))
+# #
+# # print(full_data.columns)
+# >>>>>>> main
+
+df_inventory = df['inventory']
+df_products = df['products']
+df_warehouses = df['warehouses']
+df_suppliers = df['suppliers']
+
+full_data = (df_inventory
+          .merge(df_products, on='product_id')
+          .merge(df_warehouses, on='warehouse_id'))
+
+print(full_data.columns)
 
 full_data_1 = (df_inventory
           .merge(df_products, on='product_id')
